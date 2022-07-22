@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+<h1>Test</h1>
+{% for question, answers in questions.items() %}
+    <form action="{{ url_for('step') }}" method="POST">
+    <p>{{ question }}</p>
+    {% for answer, state in answers.items()  %}
+    <input type="radio" name="answer" value={{ state }}>
+    <label>{{ answer }}</label><br><br>
+    {% endfor %}
+
+    <button type="submit">Submit</button>
+
+</form>
+{% endfor %}
+
+</body>
+</html>

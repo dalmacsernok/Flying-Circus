@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Index{% endblock %}
+{% block content %}
+    <h1>Welcome</h1>
+     {% if username != None %}
+         You are logged in as {{ username }}<br><br>
+         <a href='{{ url_for('test') }}'>Take Test</a><br><br>
+         <a href='{{ url_for('logout') }}'>Logout</a><br><br>
+         {% else %}
+         <a href='{{ url_for('login') }}'>Login</a><br><br>
+    {%  endif %}
+{% endblock %}
